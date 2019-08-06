@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./index.css">
+  <title>test-nakebao</title>
+</head>
+<body>
+  <div id="app">  
+    <header>
+      <h1 class="info-title"><span v-cloak>{{name}}</span>传送日志:</h1>
+      <div class="info-box">
+        <ul v-show="Bparams" v-cloak>
+          <li class="info-li">
+            调用的接口：{{apiName}}
+          </li>
+          <li class="info-li">
+            编码前的参数：
+          </li>
+          <li class="info-li">
+            {{Bparams}}
+          </li>
+          <li class="info-li">
+            编码后的参数：
+          </li>
+          <li class="info-li">
+            {{Aparams}}
+          </li>
+        </ul>
+      </div> 
+      <h1 class="info-title" v-show="firstParam" v-cloak><span>{{receiveName}}</span>接收日志:</h1>
+      <div class="info-box" v-show="firstParam" v-cloak>
+        <ul>
+          <li class="info-li">
+            第一个参数：
+          </li>
+          <li class="info-li">
+            {{firstParam}}
+          </li>
+          <li class="info-li">
+            第二个参数：
+          </li>
+          <li class="info-li">
+            {{secondParam}}
+          </li>
+        </ul>
+      </div> 
+    </header>
+    <main>
+      <h1 class="api-title">apis:</h1>
+      <ul class="api-ul">
+        <li class="api-li" @click="gotopage">
+            H5通用跳转APP页面
+        </li>
+        <li class="api-li" @click="gotoLogin">
+            登录
+        </li>
+        <li class="api-li" @click="toindex">
+            退出当前页面
+        </li>
+        <li class="api-li" @click="backToTop">
+            H5首页信息流返回顶部按钮
+        </li>
+        <li class="api-li" @click="openWebOut">
+            H5打开系统浏览器
+        </li>
+        
+      </ul>
+    </main>
+  </div>
+</body>
+<!-- 引入 Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data:{
+      name:null,
+      apiName:null,
+      Bparams:null,
+      Aparams:null,
+      receiveName:null,
+      firstParam:null,
+      secondParam:null
+    },
+    methods: {
+      gotopage() {
+        console.log(`H5通用跳转APP页面`);
+        this.name = `H5通用跳转APP页面`
+        this.apiName = `nexuscommon://gotopage`
+        this.Bparams = {
+          "pageId":"54",
+          "pageValue":"" 
+        }
+        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        window.location.href=`nexuscommon://gotopage?params = ${this.Aparams} `
+      },
+      gotoLogin(){
+        console.log(`登录 `);
+        this.name = `登录`    
+        this.apiName = `nexuscommon://gotoLogin`
+        this.Bparams = {
+          name:"hys",
+          password:"000000"
+        }
+        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        window.location.href=`nexuscommon://gotoLogin?params= ${this.Aparams} `
+      },
+      toindex(){
+        console.log(`退出当前页面`);
+        this.name = `退出当前页面`
+        this.apiName = `nexusindex://toindex`
+        this.Bparams = `无`
+        this.Aparams = `无`
+        window.location.href="nexusindex://toindex"
+      },
+      backToTop(){
+        console.log(`H5首页信息流返回顶部按钮`);
+        this.name = `H5首页信息流返回顶部按钮`
+        this.apiName = `nexusCommon://backToTop`
+        this.Bparams = {
+          "channel" : "商户来源",
+          "ext1" : "预留字段1"
+        }
+        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        // console.log(btoa(encodeURI(JSON.stringify(this.Aparams))))
+        window.location.href=`nexusCommon://openWebOut?params = ${this.Aparams} `
+      },
+      openWebOut(){
+        console.log(`H5打开系统浏览器`);
+        this.name = `H5打开系统浏览器`
+        this.apiName = `nexusCommon://openWebOut`
+        this.Bparams = {
+          "jupUrl" : "跳转链接"
+        }
+        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        window.location.href=`nexusCommon://openWebOut?params = ${this.Aparams} `
+      },
+      
+    }
+  })
+  function loginSuccess(params,loginInfo){
+    console.log(`loginSuccess`)
+    console.log(params);
+    console.log(loginInfo);
+    vm.receiveName = `登录成功回调loginSuccess()`
+    vm.firstParam = JSON.stringify(params)
+    vm.secondParam = loginInfo
+  }
+</script>
+<!-- <script src="./index.js"></script> -->
+</html>

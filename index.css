@@ -1,0 +1,43 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+ul,li{
+  list-style: none;
+}
+[v-cloak]{
+  display: none;
+}
+.info-title{
+  font-size:16px;
+  margin-bottom:5px;
+}
+header,main{
+  padding:10px;
+}
+.info-box{
+  border:1px solid #ccc;
+  padding:10px;
+  margin-bottom:5px;
+  height:200px;
+  width:100%;
+  word-break: break-all;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.info-li{
+  margin-bottom:5px;
+}
+.api-title{
+  font-size:16px;
+}
+.api-ul{
+
+}
+.api-li{
+  cursor: pointer;
+  margin-top:10px;
+  border:1px solid #ccc;
+  text-align: center;
+}

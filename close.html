@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./index.css">
+  <title>close</title>
+</head>
+<body>
+  <div id="app">
+    <main>
+      <ul class="api-ul">
+        <li class="api-li" @click="toindex">
+          关闭
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+<!-- 引入 Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    methods: {
+      toindex(){
+        console.log(`退出当前页面`);
+        window.location.href="nexusindex://toindex"
+      }
+    }
+  })
+</script>
+</html>
