@@ -143,6 +143,12 @@
     vm.firstParam = JSON.stringify(params)
     vm.secondParam = loginInfo
   }
+  function userLogout(){
+    console.log(`userLogout`)
+    vm.receiveName = `用户登出回调userLogout()`
+    vm.firstParam = `无`
+    vm.secondParam = `无`
+  }
 </script>
 <!-- <script src="./index.js"></script> -->
 </html>
