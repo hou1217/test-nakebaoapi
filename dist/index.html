@@ -126,7 +126,7 @@
         }
         this.Aparams = btoa((JSON.stringify(this.Bparams)))
         // console.log(btoa(encodeURI(JSON.stringify(this.Aparams))))
-        window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
+        window.location.href=`nexusCommon://backToTop?params=${this.Aparams}`
       },
       openWebOut(){
         console.log(`H5打开系统浏览器`);
