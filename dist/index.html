@@ -57,9 +57,6 @@
         <li class="api-li" @click="gotoLogin">
             登录
         </li>
-        <!-- <li class="api-li" @click="toindex">
-            退出当前页面
-        </li> -->
         <li class="api-li" @click="backToTop">
             H5首页信息流返回顶部按钮
         </li>
@@ -89,54 +86,51 @@
       gotopage() {
         console.log(`H5通用跳转APP页面`);
         this.name = `H5通用跳转APP页面`
-        this.apiName = `nexuscommon://gotopage`
+        const apiName = `nexuscommon://gotopage`
+        this.apiName = apiName
         this.Bparams = {
           "pageId":"54",
           "pageValue":"https://assets.8xin.im:8999/test-nakebaoapi/close.html" 
         }
         this.Aparams = btoa((JSON.stringify(this.Bparams)))
-        window.location.href=`nexuscommon://gotopage?params=${this.Aparams}`
+        window.location.href=`${apiName}?params=${this.Aparams}`
       },
       gotoLogin(){
         console.log(`登录 `);
         this.name = `登录`    
-        this.apiName = `nexuscommon://gotoLogin`
+        const apiName = `nexuscommon://gotoLogin`
+        this.apiName = apiName
         this.Bparams = {
           name:"hys",
           password:"000000"
         }
         this.Aparams = btoa((JSON.stringify(this.Bparams)))
-        window.location.href=`nexuscommon://gotoLogin?params=${this.Aparams}`
+        window.location.href=`${apiName}?params=${this.Aparams}`
       },
-      // toindex(){
-      //   console.log(`退出当前页面`);
-      //   this.name = `退出当前页面`
-      //   this.apiName = `nexusindex://toindex`
-      //   this.Bparams = `无`
-      //   this.Aparams = `无`
-      //   window.location.href="nexusindex://toindex"
-      // },
+
       backToTop(){
         console.log(`H5首页信息流返回顶部按钮`);
         this.name = `H5首页信息流返回顶部按钮`
-        this.apiName = `nexusCommon://backToTop`
+        const apiName = `nexuscommon://backToTop`
+        this.apiName = apiName
         this.Bparams = {
           "channel" : "shanghulaiyuan",
           "ext1" : "yuliuziduan"
         }
         this.Aparams = btoa((JSON.stringify(this.Bparams)))
         // console.log(btoa(encodeURI(JSON.stringify(this.Aparams))))
-        window.location.href=`nexusCommon://backToTop?params=${this.Aparams}`
+        window.location.href=`${apiName}?params=${this.Aparams}`
       },
       openWebOut(){
         console.log(`H5打开系统浏览器`);
         this.name = `H5打开系统浏览器`
-        this.apiName = `nexusCommon://openWebOut`
+        const apiName = `nexuscommon://openWebOut`
+        this.apiName = apiName
         this.Bparams = {
-          "jupUrl" : "https://assets.8xin.im:8999/test-nakebaoapi"
+          "jumpUrl" : "https://assets.8xin.im:8999/test-nakebaoapi"
         }
         this.Aparams = btoa((JSON.stringify(this.Bparams)))
-        window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
+        window.location.href=`${apiName}?params=${this.Aparams}`
       },
       
     }
