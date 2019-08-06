@@ -94,7 +94,7 @@
           "pageId":"54",
           "pageValue":"https://assets.8xin.im:8999/test-nakebaoapi/close.html" 
         }
-        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        this.Aparams = btoa((JSON.stringify(this.Bparams)))
         window.location.href=`nexuscommon://gotopage?params=${this.Aparams}`
       },
       gotoLogin(){
@@ -105,7 +105,7 @@
           name:"hys",
           password:"000000"
         }
-        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        this.Aparams = btoa((JSON.stringify(this.Bparams)))
         window.location.href=`nexuscommon://gotoLogin?params=${this.Aparams}`
       },
       // toindex(){
@@ -121,10 +121,10 @@
         this.name = `H5首页信息流返回顶部按钮`
         this.apiName = `nexusCommon://backToTop`
         this.Bparams = {
-          "channel" : "商户来源",
-          "ext1" : "预留字段1"
+          "channel" : "shanghulaiyuan",
+          "ext1" : "yuliuziduan"
         }
-        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        this.Aparams = btoa((JSON.stringify(this.Bparams)))
         // console.log(btoa(encodeURI(JSON.stringify(this.Aparams))))
         window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
       },
@@ -135,7 +135,7 @@
         this.Bparams = {
           "jupUrl" : "https://assets.8xin.im:8999/test-nakebaoapi"
         }
-        this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
+        this.Aparams = btoa((JSON.stringify(this.Bparams)))
         window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
       },
       
