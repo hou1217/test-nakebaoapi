@@ -95,7 +95,7 @@
           "pageValue":"https://assets.8xin.im:8999/test-nakebaoapi/close.html" 
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
-        window.location.href=`nexuscommon://gotopage?params = ${this.Aparams} `
+        window.location.href=`nexuscommon://gotopage?params=${this.Aparams}`
       },
       gotoLogin(){
         console.log(`登录 `);
@@ -106,7 +106,7 @@
           password:"000000"
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
-        window.location.href=`nexuscommon://gotoLogin?params= ${this.Aparams} `
+        window.location.href=`nexuscommon://gotoLogin?params=${this.Aparams}`
       },
       // toindex(){
       //   console.log(`退出当前页面`);
@@ -126,7 +126,7 @@
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
         // console.log(btoa(encodeURI(JSON.stringify(this.Aparams))))
-        window.location.href=`nexusCommon://openWebOut?params = ${this.Aparams} `
+        window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
       },
       openWebOut(){
         console.log(`H5打开系统浏览器`);
@@ -136,7 +136,7 @@
           "jupUrl" : "https://assets.8xin.im:8999/test-nakebaoapi"
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
-        window.location.href=`nexusCommon://openWebOut?params = ${this.Aparams} `
+        window.location.href=`nexusCommon://openWebOut?params=${this.Aparams}`
       },
       
     }
