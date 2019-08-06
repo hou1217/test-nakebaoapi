@@ -57,9 +57,9 @@
         <li class="api-li" @click="gotoLogin">
             登录
         </li>
-        <li class="api-li" @click="toindex">
+        <!-- <li class="api-li" @click="toindex">
             退出当前页面
-        </li>
+        </li> -->
         <li class="api-li" @click="backToTop">
             H5首页信息流返回顶部按钮
         </li>
@@ -92,7 +92,7 @@
         this.apiName = `nexuscommon://gotopage`
         this.Bparams = {
           "pageId":"54",
-          "pageValue":"" 
+          "pageValue":"https://assets.8xin.im:8999/test-nakebaoapi/close.html" 
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
         window.location.href=`nexuscommon://gotopage?params = ${this.Aparams} `
@@ -108,14 +108,14 @@
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
         window.location.href=`nexuscommon://gotoLogin?params= ${this.Aparams} `
       },
-      toindex(){
-        console.log(`退出当前页面`);
-        this.name = `退出当前页面`
-        this.apiName = `nexusindex://toindex`
-        this.Bparams = `无`
-        this.Aparams = `无`
-        window.location.href="nexusindex://toindex"
-      },
+      // toindex(){
+      //   console.log(`退出当前页面`);
+      //   this.name = `退出当前页面`
+      //   this.apiName = `nexusindex://toindex`
+      //   this.Bparams = `无`
+      //   this.Aparams = `无`
+      //   window.location.href="nexusindex://toindex"
+      // },
       backToTop(){
         console.log(`H5首页信息流返回顶部按钮`);
         this.name = `H5首页信息流返回顶部按钮`
@@ -133,7 +133,7 @@
         this.name = `H5打开系统浏览器`
         this.apiName = `nexusCommon://openWebOut`
         this.Bparams = {
-          "jupUrl" : "跳转链接"
+          "jupUrl" : "https://assets.8xin.im:8999/test-nakebaoapi"
         }
         this.Aparams = btoa(encodeURIComponent (JSON.stringify(this.Bparams)))
         window.location.href=`nexusCommon://openWebOut?params = ${this.Aparams} `
